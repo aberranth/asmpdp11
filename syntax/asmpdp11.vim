@@ -91,7 +91,7 @@ syn match asmpdp11Opcode /\<jsr\s/ " jump to subroutine
 syn match asmpdp11Opcode /\<rts\s/ " return from subroutine
 syn match asmpdp11Opcode /\<mark/ " mark
 syn match asmpdp11Opcode /\<sob\s/ " substract one and branch (if != 0)
-" Trap and Interrupt 
+" Trap and Interrupt
 syn match asmpdp11Opcode /\<emt/ " emulator trap
 syn match asmpdp11Opcode /\<trap/ " trap
 syn match asmpdp11Opcode /\<bpt/ " breakpoint trap
@@ -132,16 +132,17 @@ syn match asmpdp11Immediate /\$[0-7]\+/ contains=asmpdp11OctNumber
 " Special items for comments
 syn keyword asmpdp11Todo contained TODO
 
-" Operaters
-syn match asmpdp11Operator /[-+]/ 
+" Operators
+syn match asmpdp11Operator /[-+]/
 " Deferred addressing
-syn match asmpdp11Operator /@/ 
+syn match asmpdp11Operator /@/
 " Use of the PC as a general register
 syn match asmpdp11Operator /#/ " Immediate
 syn match asmpdp11Operator /@#/ " Absolute
 
 " Comments
-syn match asmpdp11Comment /\/.*/ contains=asmpdp11Todo
+syn match asmpdp11Comment /;.*/ contains=asmpdp11Todo
+" syn match asmpdp11Comment /\/.*/ contains=asmpdp11Todo
 syn region asmpdp11Comment start=/\/\*/ end=/\*\// contains=asmpdp11Todo
 
 " storage types
@@ -168,7 +169,7 @@ if version >= 508 || !exists("did_asmpdp11_syntax_inits")
   " PreProc         Define Include Macro PreCondit
   " Statement       Conditional Exception Keyword Label Operator Repeat
   " Type            StorageClass Structure Typedef
-    
+
   HiLink asmpdp11Comment Comment
   HiLink asmpdp11Todo Todo
   HiLink asmpdp11Immediate SpecialChar
@@ -177,11 +178,11 @@ if version >= 508 || !exists("did_asmpdp11_syntax_inits")
   HiLink asmpdp11CharError Error
   HiLink asmpdp11StringError Error
 
-  HiLink asmpdp11Reg Macro 
+  HiLink asmpdp11Reg Macro
   HiLink asmpdp11Operator Identifier
 
   HiLink asmpdp11Opcode Statement
-  HiLink asmpdp11Type Type    
+  HiLink asmpdp11Type Type
   HiLink asmpdp11Label Macro
   HiLink asmpdp11Macro Macro
   HiLink asmpdp11OctNumber Number
