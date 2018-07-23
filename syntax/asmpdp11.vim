@@ -88,7 +88,9 @@ syn match asmpdp11Opcode /\<blo\s/ " branch if lower
 " Jump and Subroutine
 syn match asmpdp11Opcode /\<jmp\s/ " jump
 syn match asmpdp11Opcode /\<jsr\s/ " jump to subroutine
+syn match asmpdp11Opcode /\<call\s/ " jump to subroutine
 syn match asmpdp11Opcode /\<rts\s/ " return from subroutine
+syn match asmpdp11Opcode /\<return/ " return from subroutine
 syn match asmpdp11Opcode /\<mark/ " mark
 syn match asmpdp11Opcode /\<sob\s/ " substract one and branch (if != 0)
 " Trap and Interrupt
@@ -100,6 +102,7 @@ syn match asmpdp11Opcode /\<rti/ " return from interrupt
 syn match asmpdp11Opcode /\<rtt/ " return from interrupt
 
 " MISCELLANEOUS
+syn match asmpdp11Opcode /\<nop/ " no operation
 syn match asmpdp11Opcode /\<halt/ " halt
 syn match asmpdp11Opcode /\<wait/ " wait for interrupt
 syn match asmpdp11Opcode /\<reset/ " reset external bus
