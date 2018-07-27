@@ -47,6 +47,9 @@ syn match asmpdp11Opcode /\<adc[b]\=\s/ " add carry
 syn match asmpdp11Opcode /\<sbc[b]\=\s/ " subtract carry
 syn match asmpdp11Opcode /\<sxt\s/ " sign extend
 
+syn match asmpdp11Opcode /\<mfps\s/ " move byte from processor status word
+syn match asmpdp11Opcode /\<mtps\s/ " move byte to processor status word
+
 " DOUBLE OPERAND
 " General
 syn match asmpdp11Opcode /\<mov[b]\=\s/ " move source to destination
