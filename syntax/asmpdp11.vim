@@ -127,10 +127,12 @@ syn match asmpdp11Opcode /\<scc/
 syn match asmpdp11Label /^\s*[a-z0-9_?.][a-z0-9_?.$]*:/he=e-1
 
 " Various number formats
-syn match asmpdp11OctNumber /\<[0-7]\+\>/
+syn match asmpdp11HexNumber /\<[0-9][0-9a-fA-F]*\./
 syn match asmpdp11DecNumber /\<[0-9]\+\./
+syn match asmpdp11OctNumber /\<[0-7]\+\>/
 
 " Immediate data
+syn match asmpdp11Immediate /\$[0-9][0-9a-fA-F]*\./ contains=asmpdp11HexNumber
 syn match asmpdp11Immediate /\$[0-9]\+\./ contains=asmpdp11DecNumber
 syn match asmpdp11Immediate /\$[0-7]\+/ contains=asmpdp11OctNumber
 "syn match asmpdp11Symbol /[a-z_?.][]/ TODO
@@ -191,6 +193,7 @@ if version >= 508 || !exists("did_asmpdp11_syntax_inits")
   HiLink asmpdp11Type Type
   HiLink asmpdp11Label Macro
   HiLink asmpdp11Macro Macro
+  HiLink asmpdp11HexNumber Number
   HiLink asmpdp11OctNumber Number
   HiLink asmpdp11DecNumber Number
 
