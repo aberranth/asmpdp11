@@ -124,17 +124,17 @@ syn match asmpdp11Opcode /\<sen/
 syn match asmpdp11Opcode /\<scc/
 
 " Valid labels
-syn match asmpdp11Label /^\s*[a-z0-9_?.][a-z0-9_?.$]*:/he=e-1
+syn match asmpdp11Label /^\s*[a-z0-9_?.][a-z0-9_?.$]*\ze:/he=s+6
 
 " Various number formats
-syn match asmpdp11HexNumber /\<[0-9][0-9a-fA-F]*\./
-syn match asmpdp11DecNumber /\<[0-9]\+\./
 syn match asmpdp11OctNumber /\<[0-7]\+\>/
+syn match asmpdp11DecNumber /\<[0-9]\+\>/
+syn match asmpdp11HexNumber /\<0[0-9a-f]\+\>/hs=s+1,he=e
 
 " Immediate data
-syn match asmpdp11Immediate /\$[0-9][0-9a-fA-F]*\./ contains=asmpdp11HexNumber
-syn match asmpdp11Immediate /\$[0-9]\+\./ contains=asmpdp11DecNumber
 syn match asmpdp11Immediate /\$[0-7]\+/ contains=asmpdp11OctNumber
+syn match asmpdp11Immediate /\$[0-9]\+/ contains=asmpdp11DecNumber
+syn match asmpdp11Immediate /\$0[0-9a-f]\+/hs=s+1,he=e contains=asmpdp11HexNumber
 "syn match asmpdp11Symbol /[a-z_?.][]/ TODO
 
 " Special items for comments
@@ -201,5 +201,3 @@ if version >= 508 || !exists("did_asmpdp11_syntax_inits")
 endif
 
 let b:current_syntax = "asmpdp11"
-
-" vim: ts=4 sw=2
