@@ -93,35 +93,35 @@ syn match asmpdp11Opcode /\<jmp\s/ " jump
 syn match asmpdp11Opcode /\<jsr\s/ " jump to subroutine
 syn match asmpdp11Opcode /\<call\s/ " jump to subroutine
 syn match asmpdp11Opcode /\<rts\s/ " return from subroutine
-syn match asmpdp11Opcode /\<return/ " return from subroutine
+syn match asmpdp11Opcode /\<return\>/ " return from subroutine
 syn match asmpdp11Opcode /\<mark/ " mark
 syn match asmpdp11Opcode /\<sob\s/ " substract one and branch (if != 0)
 " Trap and Interrupt
-syn match asmpdp11Opcode /\<emt/ " emulator trap
+syn match asmpdp11Opcode /\<emt/  " emulator trap
 syn match asmpdp11Opcode /\<trap/ " trap
-syn match asmpdp11Opcode /\<bpt/ " breakpoint trap
-syn match asmpdp11Opcode /\<iot/ " input/output trap
-syn match asmpdp11Opcode /\<rti/ " return from interrupt
-syn match asmpdp11Opcode /\<rtt/ " return from interrupt
+syn match asmpdp11Opcode /\<bpt/  " breakpoint trap
+syn match asmpdp11Opcode /\<iot/  " input/output trap
+syn match asmpdp11Opcode /\<rti/  " return from interrupt
+syn match asmpdp11Opcode /\<rtt/  " return from interrupt
 
 " MISCELLANEOUS
-syn match asmpdp11Opcode /\<nop/ " no operation
-syn match asmpdp11Opcode /\<halt/ " halt
-syn match asmpdp11Opcode /\<wait/ " wait for interrupt
-syn match asmpdp11Opcode /\<reset/ " reset external bus
+syn match asmpdp11Opcode /\<nop\>/  " no operation
+syn match asmpdp11Opcode /\<halt\>/ " halt
+syn match asmpdp11Opcode /\<wait\>/ " wait for interrupt
+syn match asmpdp11Opcode /\<reset\>/ " reset external bus
 syn match asmpdp11Opcode /\<mfpi\s/ " move from previous instruction space
 syn match asmpdp11Opcode /\<mtpi\s/ " move to previous instruction space
 " Condition Code Operation
-syn match asmpdp11Opcode /\<clc/ " clear
-syn match asmpdp11Opcode /\<clv/
-syn match asmpdp11Opcode /\<clz/
-syn match asmpdp11Opcode /\<cln/
-syn match asmpdp11Opcode /\<ccc/
-syn match asmpdp11Opcode /\<sec/ " set
-syn match asmpdp11Opcode /\<sev/
-syn match asmpdp11Opcode /\<sez/
-syn match asmpdp11Opcode /\<sen/
-syn match asmpdp11Opcode /\<scc/
+syn match asmpdp11Opcode /\<clc\>/ " clear
+syn match asmpdp11Opcode /\<clv\>/
+syn match asmpdp11Opcode /\<clz\>/
+syn match asmpdp11Opcode /\<cln\>/
+syn match asmpdp11Opcode /\<ccc\>/
+syn match asmpdp11Opcode /\<sec\>/ " set
+syn match asmpdp11Opcode /\<sev\>/
+syn match asmpdp11Opcode /\<sez\>/
+syn match asmpdp11Opcode /\<sen\>/
+syn match asmpdp11Opcode /\<scc\>/
 
 " Valid labels
 syn match asmpdp11Label /^\s*[a-z0-9_?.][a-z0-9_?.$]*\ze:/he=s+6
