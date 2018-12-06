@@ -124,7 +124,7 @@ syn match asmpdp11Opcode /\<sen\>/
 syn match asmpdp11Opcode /\<scc\>/
 
 " Valid labels
-syn match asmpdp11Label /^\s*[a-z0-9_?.][a-z0-9_?.$]*\ze:/he=s+6
+syn match asmpdp11Label /^\s*[a-z0-9.$]\+\ze:/he=s+6
 
 " Various number formats
 syn match asmpdp11OctNumber /\<[0-7]\+\>/
